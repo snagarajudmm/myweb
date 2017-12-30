@@ -33,7 +33,7 @@ stage('deploy'){
     if (os.contains("linux")) {
         sh "sudo cp -f /var/lib/jenkins/workspace/pipeline/target/myweb.war /usr/local/tomcat7/webapps/" 
     } else {
-      bat "copy C:\\Program Files (x86)\\Jenkins\\workspace\\pipelineascode\\target\\myweb.war C:\\apache-tomcat-7.0.82\\webapps\\" 
+      bat "copy target\\myweb.war C:\\apache-tomcat-7.0.82\\webapps\\" 
     }
     
 }
