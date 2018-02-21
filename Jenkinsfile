@@ -1,6 +1,6 @@
 node() {
 stage('codecheckout'){
- checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHubCredentials', url: 'https://github.com/codeaddaguru/myweb.git']]])
+ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHubCredentials', url: 'https://github.com/snagarajudmm/myweb.git']]])
 }
 def mvnHome = tool 'MAVEN_HOME'
 def os = System.properties['os.name'].toLowerCase()
