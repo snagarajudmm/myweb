@@ -31,7 +31,7 @@ stage('package'){
 }
 stage('deploy'){
     if (os.contains("linux")) {
-        sh "sudo cp -f /var/lib/jenkins/workspace/pipeline/target/myweb.war /usr/local/tomcat7/webapps/" 
+        sh "sudo cp -f /var/lib/jenkins/workspace/pipelineasacode/target/myweb.war /usr/local/tomcat7/webapps/" 
     } else {
       bat "copy target\\myweb.war C:\\apache-tomcat-7.0.82\\webapps\\" 
     }
