@@ -5,7 +5,6 @@ stage('codecheckout'){
 def mvnHome = tool 'Maven'
 def os = System.properties['os.name'].toLowerCase()
 stage('compile'){
-
     echo "OS: ${os}"
     if (os.contains("linux")) {
       sh "mvn compile" 
