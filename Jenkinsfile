@@ -12,6 +12,11 @@ stage('compile'){
       bat "${mvnHome}/bin/mvn clean compile" 
     }
 }
+ stage('SonarQube Analysis') {
+        def mvnHome =  tool name: 'maven-3', type: 'maven'
+        withSonarQubeEnv('sonar-6') { 
+          sh "${mvnHome}/bin/mvn sonar:sonar"
+        }
 stage('test'){
     if (os.contains("linux")) {
       sh "mvn test" 
@@ -34,6 +39,10 @@ stage('deploy'){
     } else {
       bat "copy target\\myweb.war C:\\apache-tomcat-7.0.82\\webapps\\" 
     }
-    
+  stage('Email Notification'){
+      mail bcc: '', body: '''Hi Welcome to jenkins email alerts
+      Thanks
+      Nagaraju''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'nagarajubeee@gmail.com'  
+  
 }
 }
