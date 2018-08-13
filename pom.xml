@@ -40,17 +40,17 @@
 	</dependencies>
 	
 	<distributionManagement>
-		<repository>
-			<id>nexus</id>
-			<name>Releases</name>
-			<url>http://54.158.74.18:8081/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus</id>
-			<name>Snapshot</name>
-			<url>http://54.158.74.18:8081/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-  	</distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-26-183.ec2.internal-releases</name>
+        <url>http://54.91.219.36:8081/artifactory/Dev-Local</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-26-183.ec2.internal-snapshots</name>
+        <url>http://54.91.219.36:8081/artifactory/Dev-Local</url>
+    </snapshotRepository>
+</distributionManagement>
 	<build>
 		<finalName>myweb</finalName>
 		<plugins>
