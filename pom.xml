@@ -42,13 +42,13 @@
 	<distributionManagement>
     <repository>
         <id>central</id>
-        <name>ip-172-31-26-183.ec2.internal-releases</name>
-        <url>http://54.91.219.36:8081/artifactory/Dev-Local</url>
+        <name>ip-172-31-79-103.ec2.internal-releases</name>
+        <url>http://54.165.15.140:8081/artifactory/Zulaplus_local_repo</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>ip-172-31-26-183.ec2.internal-snapshots</name>
-        <url>http://54.91.219.36:8081/artifactory/Dev-Local</url>
+        <name>ip-172-31-79-103.ec2.internal-snapshots</name>
+        <url>http://54.165.15.140:8081/artifactory/Zulaplus_local_repo</url>
     </snapshotRepository>
 </distributionManagement>
 	<build>
