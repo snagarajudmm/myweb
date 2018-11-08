@@ -42,13 +42,13 @@
 	<distributionManagement>
     <repository>
         <id>central</id>
-        <name>ip-172-31-79-148.ec2.internal-releases</name>
-        <url>http://52.90.186.222:8081/artifactory/ALL-PLAN</url>
+        <name>ip-172-31-41-215.ec2.internal-releases</name>
+        <url>http://34.229.235.237:8081/artifactory/snapshot_repo</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>ip-172-31-79-148.ec2.internal-snapshots</name>
-        <url>http://52.90.186.222:8081/artifactory/ALL-PLAN</url>
+        <name>ip-172-31-41-215.ec2.internal-snapshots</name>
+        <url>http://34.229.235.237:8081/artifactory/snapshot_repo</url>
     </snapshotRepository>
 </distributionManagement>
 	<build>
