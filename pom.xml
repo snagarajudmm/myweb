@@ -42,13 +42,13 @@
 	<distributionManagement>
     <repository>
         <id>central</id>
-        <name>ip-172-31-41-215.ec2.internal-releases</name>
-        <url>http://34.229.235.237:8081/artifactory/snapshot_repo</url>
+        <name>DESKTOP-OFKBHC8-releases</name>
+        <url>http://localhost:8040/artifactory/zulaplus_snapshot</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>ip-172-31-41-215.ec2.internal-snapshots</name>
-        <url>http://34.229.235.237:8081/artifactory/snapshot_repo</url>
+        <name>DESKTOP-OFKBHC8-snapshots</name>
+        <url>http://localhost:8040/artifactory/zulaplus_snapshot</url>
     </snapshotRepository>
 </distributionManagement>
 	<build>
