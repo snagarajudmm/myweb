@@ -2,7 +2,6 @@ node {
     stage('Git'){
       git 'https://github.com/snagarajudmm/myweb.git'    
       def mvnHome = tool 'Maven'
-
 	  def os = System.properties['os.name'].toLowerCase()
     stage('compile'){
     echo "OS: ${os}"
