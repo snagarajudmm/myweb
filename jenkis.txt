@@ -1,0 +1,33 @@
+node {
+    stage('Git'){
+      git 'https://github.com/snagarajudmm/myweb.git'    
+      def mvnHome = tool 'Maven'
+
+	  def os = System.properties['os.name'].toLowerCase()
+    stage('compile'){
+    echo "OS: ${os}"
+    if (os.contains("linux")) {
+      sh "mvn compile" 
+    } else {
+      bat "${mvnHome}/bin/mvn clean compile" 
+    }
+ }
+    stage('SonarQube Analysis') {
+        def mvnHome =  tool name: 'maven-3', type: 'maven'
+        withSonarQubeEnv('sonarqube-6.7.6') { 
+          sh "${mvnHome}/bin/mvn sonar:sonar"
+        }
+    stage('test'){
+    if (os.contains("linux")) {
+      sh "mvn test" 
+    } else {
+      bat "${mvnHome}/bin/mvn clean test" 
+    }
+    junit 'target\\surefire-reports\\*.xml'
+   }
+    stage('package'){
+    if (os.contains("linux")) {
+      sh "mvn package" 
+    } else {
+      bat "${mvnHome}/bin/mvn clean package" 
+    }
