@@ -7,7 +7,6 @@ node{
       def mvnHome =  tool name: 'maven-3', type: 'maven'
       sh "${mvnHome}/usr/share/apache-maven/ mvn compile"
     }
- }
  stage('SonarQube Analysis') {
         def mvnHome =  tool name: 'maven-3', type: 'maven'
         withSonarQubeEnv('sonarqube-6.7.6') {
