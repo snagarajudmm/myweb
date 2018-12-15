@@ -11,7 +11,7 @@ node{
  stage('SonarQube Analysis') {
         def mvnHome =  tool name: 'maven-3', type: 'maven'
         withSonarQubeEnv('sonarqube-6.7.6') {
-          sh "${mvnHome}/bin/mvn sonar:sonar"
+          sh "${mvnHome}/bin/mvn sonar:sonar -Dsonar.host.url=http://3.83.11.199:9000
         }
   stage('test'){
       // Get maven home path
