@@ -1,14 +1,11 @@
-node {
-    stage('Git'){
-      git 'https://github.com/snagarajudmm/myweb.git'    
-      def mvnHome = tool 'Maven'
-	  def os = System.properties['os.name'].toLowerCase()
-    stage('compile'){
-    echo "OS: ${os}"
-    if (os.contains("linux")) {
-      sh "mvn compile" 
-    } else {
-      bat "${mvnHome}/bin/mvn clean compile" 
+node{
+   stage('SCM Checkout'){
+     git 'https://github.com/javahometech/my-app'
+   }
+   stage('Compile-Package'){
+      // Get maven home path
+      def mvnHome =  tool name: 'maven-3', type: 'maven'   
+      sh "${mvnHome}/bin/mvn package"
     }
  }
     stage('SonarQube Analysis') {
