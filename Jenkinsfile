@@ -1,11 +1,11 @@
 node{
    stage('SCM Checkout'){
      git 'git credentialsId: 'Git-credentials', url: 'https://github.com/snagarajudmm/myweb.git'
-   }
  stage('Compile the code'){
       // Get maven home path
       def mvnHome =  tool name: 'maven-3', type: 'maven'
       sh "${mvnHome}/usr/share/apache-maven/ mvn compile"
+ }
     }
  stage('SonarQube Analysis') {
         def mvnHome =  tool name: 'maven-3', type: 'maven'
