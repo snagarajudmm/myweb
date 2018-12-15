@@ -2,10 +2,10 @@ node{
    stage('SCM Checkout'){
      git 'https://github.com/javahometech/my-app'
    }
-   stage('Compile-Package'){
+   stage('Compile'){
       // Get maven home path
       def mvnHome =  tool name: 'maven-3', type: 'maven'   
-      sh "${mvnHome}/bin/mvn package"
+      sh "${mvnHome}/bin/mvn compile"
     }
  }
     stage('SonarQube Analysis') {
@@ -14,16 +14,16 @@ node{
           sh "${mvnHome}/bin/mvn sonar:sonar"
         }
     stage('test'){
-    if (os.contains("linux")) {
-      sh "mvn test" 
-    } else {
-      bat "${mvnHome}/bin/mvn clean test" 
+      // Get maven home path
+      def mvnHome =  tool name: 'maven-3', type: 'maven'   
+      sh "${mvnHome}/bin/mvn compile"
+    }
     }
     junit 'target\\surefire-reports\\*.xml'
    }
     stage('package'){
-    if (os.contains("linux")) {
-      sh "mvn package" 
-    } else {
-      bat "${mvnHome}/bin/mvn clean package" 
+      // Get maven home path
+      def mvnHome =  tool name: 'maven-3', type: 'maven'   
+      sh "${mvnHome}/bin/mvn compile"
+    }
     }
