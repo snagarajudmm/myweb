@@ -7,7 +7,7 @@ node{
     }
  stage('SonarQube Analysis') {
  
-        {
+        
           sh "mvn sonar:sonar" 
         }
   stage('test'){
