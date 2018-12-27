@@ -42,12 +42,12 @@
     <repository>
        <id>central</id>
         <name>ip-172-31-39-115.ec2.internal-releases</name>
-        <url>http://3.81.184.218:8040/artifactory/zulaplus_snapshot</url>
+        <url>http://100.26.34.109:8081/repository/maven-snapshots/</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
         <name>ip-172-31-39-115.ec2.internal-snapshots</name>
-        <url>http://3.81.184.218:8040/artifactory/zulaplus_snapshot</url>
+        <url>http://100.26.34.109:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
 </distributionManagement>
 	<build>
